@@ -1,0 +1,21 @@
+module.exports = {
+    entry:{
+        dist:"./src/app.js"
+    },
+    output:{
+        path:__dirname+'/dist',
+        filename:'[name].js'
+    },
+    module:{
+        rules:[
+            {
+                test:/\.jsx$|\.js$/,
+                exclude:/node_modules/,
+                loader:"babel-loader",
+                options:{
+                    presets:['env','stage-2','react']
+                }
+            }
+        ]
+    }
+}
